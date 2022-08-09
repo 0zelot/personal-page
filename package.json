@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.5",
+        "moment": "^2.29.4",
         "showdown": "^2.1.0"
     }
 }
