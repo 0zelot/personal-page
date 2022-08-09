@@ -1,6 +1,6 @@
 <template>
     <header>
-
+        
         <div class="center">
 
             <span class="regular">Hello stranger, i'm</span>
@@ -14,8 +14,8 @@
                 </div>
             </div>
 
-            <div class="icons favourite row text-center mt-5">
-                <span class="m-3 regular">What do I use</span>
+            <div class="icons favourite row text-center mt-4">
+                <h2 class="m-3 regular">What do I use</h2>
                 <div v-for="(item, i) of settings.favourites" :key="i" class="col">
                     <i :class="`${item} colored`"></i>
                 </div>
