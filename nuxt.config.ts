@@ -52,6 +52,15 @@ export default defineNuxtConfig({
                 {
                     rel: "stylesheet",
                     href: "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+                },
+                { 
+                    rel: "icon", 
+                    type: "image/x-icon", 
+                    href: process.env.favicon 
+                },
+                { 
+                    rel: "apple-touch-icon", 
+                    href: process.env.favicon 
                 }
             ],
             noscript: [
@@ -77,7 +86,8 @@ export default defineNuxtConfig({
         env: {
             title: process.env.title,
             header: process.env.header,
-            api: process.env.api
+            api: process.env.api,
+            favicon: process.env.favicon
         }
     }
 
