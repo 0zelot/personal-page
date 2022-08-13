@@ -31,7 +31,6 @@ export default {
             const getStatus = async () => {
                 const data = await $fetch(this.$props.discord.widget_url);
                 this.fetched = data.members.find(user => user.username == this.discord.user.username);
-                console.log(data)
             }
             getStatus();
             setInterval(() => getStatus(), 30000);
