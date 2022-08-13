@@ -2,19 +2,20 @@
     <main>
         <Header :settings="obj" />
 
-            <div class="container text-center">
+            <div class="container">
 
-                <span class="regular">Are you still here?</span>
-                <div class="row text-center">
+                <h2 class="regular m-2">Are you still here?</h2>
+                <div class="row">
                     <div class="col-lg-8 col-md-12">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan in nisl. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Est lorem ipsum dolor sit amet consectetur. Elit scelerisque mauris pellentesque pulvinar pellentesque. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Penatibus et magnis dis parturient montes nascetur ridiculus mus mauris. Augue eget arcu dictum varius duis at. Lorem ipsum dolor sit amet. Vitae tortor condimentum lacinia quis vel eros donec ac. Nibh ipsum consequat nisl vel pretium. Varius vel pharetra vel turpis nunc. Quam elementum pulvinar etiam non quam lacus. Dignissim enim sit amet venenatis urna. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Suspendisse interdum consectetur libero id. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Lectus proin nibh nisl condimentum id venenatis a condimentum.
+                        <Repositories :url="obj.github.repos_url" />
                     </div>
                     <div class="col-lg-4 col-md-12">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan in nisl. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Est lorem ipsum dolor sit amet consectetur. Elit scelerisque mauris pellentesque pulvinar pellentesque. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum.
+                        <Status v-if="obj.discord" :discord="obj.discord" :favicon="config.env.favicon" />
                     </div>
                 </div>
+                <hr>
 
-                <Quotes :quotes="obj.quotes" />
+                <Quotes v-if="obj.quotes && obj.quotes.length > 0" :quotes="obj.quotes" />
 
             </div>
 
@@ -24,6 +25,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <script setup>
     const config = useRuntimeConfig();
-    const {data: settings} = await useFetch("/config.json", {baseURL: config.env.api});
-    const obj = JSON.parse(settings.value);
+    let {data: settings} = await useFetch("/config.json", {baseURL: config.env.api});
+    let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
 </script>
