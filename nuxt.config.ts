@@ -82,11 +82,19 @@ export default defineNuxtConfig({
         extractCSS: true
     },
 
+    plugins: [
+        {
+            src: "~/plugins/particles.vue3.ts",
+            ssr: false,
+        },
+    ],
+
     publicRuntimeConfig: {
         env: {
             title: process.env.title,
             header: process.env.header,
             api: process.env.api,
+            backup_config: process.env.backup_config,
             favicon: process.env.favicon
         }
     }
