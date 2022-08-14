@@ -27,4 +27,5 @@
     const config = useRuntimeConfig();
     let {data: settings} = await useFetch("/config.json", {baseURL: config.env.api});
     let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
+    if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
 </script>
