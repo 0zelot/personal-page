@@ -1,10 +1,8 @@
 <template>
     <main>
         <div class="center">
-            <hgroup>
-                <h1 class="title">{{error.statusCode}}</h1>
-                <h2 class="h3 text-muted">{{mappings[error.statusCode] || error.message}}</h2>
-            </hgroup>
+            <h1 class="title">{{error.statusCode}}</h1>
+            <h2 class="h3 text-muted">{{mappings[error.statusCode] || error.message}}</h2>
         </div>
     </main>
 </template>
