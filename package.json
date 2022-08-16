@@ -8,11 +8,13 @@
     },
     "devDependencies": {
         "@types/showdown": "^2.0.0",
-        "nuxt": "3.0.0-rc.6"
+        "nuxt": "^3.0.0-rc.8"
     },
     "dependencies": {
+        "@nuxtjs/feed": "^2.0.0",
         "@popperjs/core": "^2.11.5",
         "moment": "^2.29.4",
+        "node-fetch": "^3.2.10",
         "particles.vue3": "^2.1.4",
         "showdown": "^2.1.0",
         "tsparticles": "^2.1.4"
