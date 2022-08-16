@@ -40,7 +40,7 @@ a:hover {
 }
 
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/background.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -169,8 +169,6 @@ hr {
     border-top: 1px solid var(--primary-opacity-color) !important;
 }
 
-
-  
 #summary .collapse:not(.show) {
       height: 11.5rem !important;
       overflow: hidden;
@@ -187,4 +185,36 @@ hr {
   
 #summary a.show-more:not(.collapsed):after {
     content: "Show less";
+}
+
+img.article-image {
+    max-width: 720px !important;
+    max-height: 340px !important;
+}
+
+div.article-item {
+    min-height: 23rem !important;
+    border: 1px solid var(--primary-opacity-color);
+}
+
+div.article-tags {
+    margin-top: -8px;
+    margin-bottom: 8px;
+    padding-bottom: 1px;
+}
+
+p.article-desc {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+div.article-content {
+    min-height: 81vh;
+}
+
+code {
+    color: var(--primary-color) !important;
 }
