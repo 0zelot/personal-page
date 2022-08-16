@@ -1,7 +1,9 @@
 <template>
     <header>
-        <Particles class="position-absolute h-100 w-100" id="tsparticles" :options="options" :particles-init="particlesInit" />
-
+        <client-only>
+            <Particles class="position-absolute h-100 w-100" id="tsparticles" :options="options" :particles-init="particlesInit" />
+        </client-only>
+        
         <div class="center">
 
             <span class="regular">Hello stranger, i'm</span>

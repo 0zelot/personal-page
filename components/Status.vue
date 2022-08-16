@@ -3,7 +3,7 @@
     <span class="d-flex float-start">Discord status</span>
     <div v-if="discord" class="mt-5">
         <div class="row text-left">
-            <img :src="this.$props.favicon" class="avatar img-circle m-2 p-1 inline-block" alt="Avatar">
+            <img :src="$props.favicon" width="auto" height="auto" class="avatar img-circle m-2 p-1 inline-block" alt="Avatar">
             <div class="inline-block discord-info">
                 <span class="discord-username">{{discord.user.username}}</span><span>#{{discord.user.discriminator}}</span>
                 <span v-if="fetched" class="d-block">
@@ -29,7 +29,7 @@ export default {
     methods: {
         startInterval() {
             const getStatus = async () => {
-                const data = await $fetch(this.$props.discord.widget_url);
+                const data = await $fetch(this?.$props.discord.widget_url);
                 this.fetched = data.members.find(user => user.username == this.discord.user.username);
             }
             getStatus();

@@ -8,11 +8,10 @@
                             
                             <div v-for="(item, i) of repos" :key="i" class="p-2 d-block mx-auto col-sm-12 col-md-6">
                                 <div class="card-body repo-item rounded m-2 p-2 h-100">
-                                    <h5 class="card-title"><a :href="item.html_url" target="_blank">{{item.full_name}}</a></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{item.language}}</h6>
+                                    <h3 class="card-title h5"><a :href="item.html_url" target="_blank">{{item.full_name}}</a></h3>
+                                    <h4 class="card-subtitle mb-2 text-muted h6">{{item.language}}</h4>
                                     <p class="card-text repo-desc">{{item.description}}</p>
                                     <div class="repo-tags">
-                                        <span v-if="item.archived" class="badge bg-danger"> Archived</span>
                                         <span class="badge bg-custom"><i class="fa-solid fa-star"></i> {{item.stargazers_count}}</span>
                                         <span class="badge bg-custom"><i class="fa-solid fa-calendar-plus"></i> {{moment(item.created_at, "YYYYMMDD").fromNow()}}</span>
                                         <span class="badge bg-custom"><i class="fa-solid fa-pen-to-square"></i> {{moment(item.updated_at, "YYYYMMDD").fromNow()}}</span>
@@ -40,7 +39,7 @@ export default {
         }
     },
     async created() {
-        this.repos = (await $fetch(this.$props.url)).filter(repo => !repo.fork).sort((a, b) => b.stargazers_count - a.stargazers_count);
+        this.repos = (await $fetch(this?.$props.url)).filter(repo => (!repo.fork && !repo.archived)).sort((a, b) => b.stargazers_count - a.stargazers_count);
     }
 }
 </script>

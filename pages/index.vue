@@ -1,6 +1,9 @@
 <template>
     <main>
-        <Header :settings="obj" />
+            <Title>Hello page - {{config.env.title}}</Title>
+            <Link rel="canonical" :href="`https://${config.env.domain}`" />
+
+            <Header :settings="obj" />
 
             <div class="container">
 
@@ -17,6 +20,8 @@
 
                 <Quotes v-if="obj.quotes && obj.quotes.length > 0" :quotes="obj.quotes" />
 
+                <Articles v-if="obj.blog && obj.blog.length > 0" :articles="obj.blog" />
+
             </div>
 
         <Footer />
@@ -24,8 +29,8 @@
 </template>
 
 <script setup>
-    const config = useRuntimeConfig();
-    let {data: settings} = await useFetch("/config.json", {baseURL: config.env.api});
-    let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
-    if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
+const config = useRuntimeConfig();
+let {data: settings} = await useAsyncData("settings", () => $fetch(`${config.env.api}/config.json`));
+let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
+if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
 </script>
