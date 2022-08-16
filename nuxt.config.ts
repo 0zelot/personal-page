@@ -164,9 +164,25 @@ export default defineNuxtConfig({
     ],
 
     modules: [
-        "@nuxtjs/feed"
+        "@nuxtjs/feed",
+        "@nuxtjs/sitemap"
     ],
     
+    sitemap: {
+        hostname: `https://${process.env.domain}`,
+        gzip: true,
+        defaults: {
+            changefreq: "daily",
+            priority: 1,
+            lastmod: new Date()
+        },
+        routes: async () => {
+            const config = await (await (fetch(`${process.env.api}/config.json`))).json();
+            return ["/", "/blog/", ...config.blog.map((post) => `/blog/${post.slug}`)];
+        },
+        cacheTime: 1000 * 60 * 15,
+    },
+
     feed: [
         {
             path: "/feed",
