@@ -3,6 +3,7 @@
 
         <Title>{{selected.title}} - {{config.env.title}}</Title>
         <Meta name="description" :content="selected.description" />
+        <Meta name="keywords" :content="selected.keywords" />
         
         <Meta property="og:title" :content="selected.title" />
         <Meta property="og:description" :content="selected.description" />
@@ -37,10 +38,11 @@
                 }
             ]" />
 
-            <div class="article-tags mt-3">
+            <div class="article-tags mt-2">
                 <span v-for="(tag, i) of selected.tags" :key="i" class="badge bg-custom float-start">{{tag}}</span>
                 <span class="float-end">{{moment.unix(selected.created).format("DD MMMM YYYY HH:mm")}}</span>
             </div>
+            <br />
 
             <article v-html="converter.makeHtml(article)" class="mt-2" id="article"></article>
 
@@ -57,6 +59,7 @@ import moment from "moment";
 const converter = new showdown.Converter();
 
 const config = useRuntimeConfig();
+const router = useRouter();
 const route = useRoute();
 
 let {data: settings} = await useAsyncData("settings", () => $fetch(`${config.env.api}/config.json`));
@@ -64,6 +67,7 @@ let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(set
 if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
 
 const selected = obj.blog.find(post => post.slug == route.params.slug);
+if(!selected) router.push({path: "/blog"});
 
 const {data: article} = await useAsyncData("article", () => $fetch(`${config.env.api}/${selected.content}`));
 

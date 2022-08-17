@@ -8,7 +8,7 @@
 
             <h1 class="text-center my-5">Tutorials, insights and some other stuff</h1>
 
-            <a href="/feed" target="_blank"><i class="fa-solid fa-rss float-end fs-5"></i></a>
+            <a href="/rss.xml" target="_blank" title="RSS feed"><i class="fa-solid fa-rss float-end fs-5"></i></a>
 
             <Navbar :pages="[
                 {

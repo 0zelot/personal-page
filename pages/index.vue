@@ -5,7 +5,7 @@
 
             <Header :settings="obj" />
 
-            <div class="container">
+            <div class="container mb-3">
 
                 <h2 class="regular m-2">Are you still here?</h2>
                 <div class="row">
