@@ -1,8 +1,4 @@
 import {defineNuxtConfig} from "nuxt";
-import fetch from "node-fetch";
-import showdown from "showdown";
-
-const converter = new showdown.Converter();
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -10,6 +6,16 @@ export default defineNuxtConfig({
     ssr: true,
 
     target: "static",
+
+    nitro: {
+        prerender: {
+            routes: [
+                "/sitemap.xml",
+                "/robots.txt",
+                "/rss.xml"
+            ]
+        }
+    },
 
     app: {
 
@@ -161,60 +167,6 @@ export default defineNuxtConfig({
             src: "~/plugins/scrollToTop.ts",
             ssr: false,
         },
-    ],
-
-    modules: [
-        "@nuxtjs/feed",
-        "@nuxtjs/sitemap"
-    ],
-    
-    sitemap: {
-        hostname: `https://${process.env.domain}`,
-        gzip: true,
-        defaults: {
-            changefreq: "daily",
-            priority: 1,
-            lastmod: new Date()
-        },
-        routes: async () => {
-            const config = await (await (fetch(`${process.env.api}/config.json`))).json();
-            return ["/", "/blog/", ...config.blog.map((post) => `/blog/${post.slug}`)];
-        },
-        cacheTime: 1000 * 60 * 15,
-    },
-
-    feed: [
-        {
-            path: "/feed",
-
-            async create(feed) {
-
-                feed.options = {
-                    title: process.env.title,
-                    link: `https://${process.env.domain}/feed`,
-                    description: process.env.description
-                }
-
-                const config = await (await (fetch(`${process.env.api}/config.json`))).json();
-                
-                for(const post of config.blog) {
-                    feed.addItem({
-                        title: post.title,
-                        id: `https://${process.env.domain}/blog/${post.slug}`,
-                        link: `https://${process.env.domain}/blog/${post.slug}`,
-                        image: post.image,
-                        favicon: process.env.favicon,
-                        description: post.description,
-                        published: new Date(post.created * 1000),
-                        content: converter.makeHtml(await (await fetch(`${process.env.api}${post.content}`)).text())
-                    })
-                }
-
-            },
-
-            cacheTime: 1000 * 60 * 15,
-            type: "rss2"
-        }
     ],
 
     publicRuntimeConfig: {
