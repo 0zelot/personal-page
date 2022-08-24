@@ -254,9 +254,16 @@ article > h6 > a, article > h6 > a:hover {
     display: block;
 }
 
-h1, h2 {
+article > h1, article > h2 {
     margin-top: 30px;
 }
+
+article > img, article > * > img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 
 
 /* Footer */
