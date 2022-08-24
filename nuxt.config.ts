@@ -49,7 +49,7 @@ export default defineNuxtConfig({
                 { 
                     hid: "theme-color", 
                     name: "theme-color", 
-                    content: "#5c4dff"
+                    content: "#5672fc"
                 },
                 { 
                     hid: "og:title", 
@@ -168,6 +168,25 @@ export default defineNuxtConfig({
             ssr: false,
         },
     ],
+
+    modules: [
+        "@nuxt/content"
+    ],
+
+    content: {
+        documentDriven: true,
+        mdc: true,
+        toc: {
+            depth: 3,
+            searchDepth: 3
+        },
+        highlight: {
+            theme: {
+                default: "github-light",
+                dark: "github-dark",
+            }
+        }
+    },
 
     publicRuntimeConfig: {
         env: {
