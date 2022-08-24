@@ -7,7 +7,7 @@
 
             <div v-for="(item, i) of sortedArticles" :key="i" class="col-sm-12 col-md-6 col-lg-4 m-2 d-block mx-auto mb-3 mt-3">
                 <div class="text-center article-item rounded">
-                    <NuxtLink :to="`/blog/${item.slug}`">
+                    <NuxtLink :to="item._path">
                         <img :src="item.image" class="card-img-top article-image p-2" :alt="item.title" :title="item.title">
                     </NuxtLink>
                     <div class="card-body m-2">
@@ -16,7 +16,7 @@
                             <span class="float-end">{{moment.unix(item.created, "YYYYMMDD").fromNow()}}</span>
                         </div>
                         <br />
-                        <h3 class="card-title h4"><NuxtLink :to="`/blog/${item.slug}`">{{item.title}}</NuxtLink></h3>
+                        <h3 class="card-title h4"><NuxtLink :to="item._path">{{item.title}}</NuxtLink></h3>
                         <p class="card-text mx-1 my-0 article-desc">{{item.description}}</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ export default {
         }
     },
     created() {
-        this.sortedArticles = this?.$props.articles.filter(post => post.visibility == 1).sort((a, b) => b.created - a.created)
+        this.sortedArticles = this?.$props.articles.sort((a, b) => b.created - a.created)
     }
 }
 </script>
