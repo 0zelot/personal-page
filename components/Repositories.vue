@@ -22,7 +22,7 @@
                     </div>               
                     <a class="show-more collapsed" data-bs-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary"></a>
                 </div>
-                <p v-else class="text-muted">I don't have any public repositories yet.</p>
+                <p v-else class="text-muted">I don't have any public repositories yet or could not get them.</p>
 
     </section>
 </template>

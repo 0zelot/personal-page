@@ -1,5 +1,5 @@
 <template>
-    <div id="carouselQuotes" class="carousel mt-3 carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
+    <div id="carouselQuotes" class="carousel mt-3 carousel-fade" data-bs-ride="carousel" >
         <div v-for="(item, i) of quotes" :key="i" v-bind:class="i ? null : 'active'" class="carousel-item">
             <div class="carousel-caption">
                 <blockquote class="blockquote border-0 p-0">
@@ -14,11 +14,9 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: ["quotes"],
-    mounted() {
-        new bootstrap.Carousel(document.querySelector("#carouselQuotes"));
-    }
-}
+<script setup>
+const props = defineProps({
+    quotes: Object,
+});
+const {quotes} = toRefs(props);
 </script>

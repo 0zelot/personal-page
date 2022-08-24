@@ -9,8 +9,9 @@
     </nav>
 </template>
 
-<script>
-export default {
-    props: ["pages"]
-}
+<script setup>
+const props = defineProps({
+    pages: Object,
+});
+const {pages} = toRefs(props);
 </script>
