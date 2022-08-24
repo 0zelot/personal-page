@@ -240,6 +240,7 @@ li.toc-item {
 
 article > * {
     color: #ffffffc8;
+    text-align: justify;
 }
 
 article > h1 > a, article > h1 > a:hover,
