@@ -261,6 +261,7 @@ article > h1, article > h2 {
 article > img, article > * > img {
     max-width: 100%;
     height: auto;
+    border-radius: 3px;
 }
 
 

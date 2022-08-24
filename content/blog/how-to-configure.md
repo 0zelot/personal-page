@@ -4,7 +4,7 @@ created: 1659951006
 tags: []
 keywords: ""
 visibility: 1
-image: "https://i.imgur.com/824s386.png"
+image: "https://i.imgur.com/8iTkIC7.png"
 description: "Click here to see how to configure."
 ---
 ## What is it

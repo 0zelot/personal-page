@@ -5,7 +5,7 @@ tags:
 - "Everything"
 keywords: "some,useless,keywords"
 visibility: 1
-image: "https://i.imgur.com/824s386.png"
+image: "https://i.imgur.com/8iTkIC7.png"
 description: "Vitae proin sagittis nisl rhoncus. Nisl tincidunt eget nullam non nisi est sit amet facilisis. Excepteur sint occaecat cupidatat non proident."
 ---
 ## Example post
