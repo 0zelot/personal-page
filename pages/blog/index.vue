@@ -21,7 +21,7 @@
                 }
             ]" />
 
-            <Articles v-if="obj.blog && obj.blog.length > 0" :articles="obj.blog" />
+            <Articles v-if="posts && posts.length > 0" :articles="posts" />
 
         </div>
 
@@ -33,8 +33,9 @@
 import moment from "moment";
 
 const config = useRuntimeConfig();
+const {path} = useRoute();
 
-let {data: settings} = await useAsyncData("settings", () => $fetch(`${config.env.api}/config.json`));
-let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
-if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
+const {data} = await useAsyncData(() => queryContent().where({visibility: 1}).find());
+
+const posts = data.value;
 </script>

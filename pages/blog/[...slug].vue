@@ -17,10 +17,9 @@
         <Meta name="twitter:image" :content="selected.image" />
         <Meta name="twitter:card" content="summary_large_image" />
 
-        <Link rel="canonical" :href="`https://${config.env.domain}/blog/${route.params.slug}`" />
+        <Link rel="canonical" :href="`https://${config.env.domain}${path}`" />
 
         <div class="container my-5 article-content">
-
             <h1 class="text-center my-5"> {{selected.title}}</h1>
 
             <Navbar :pages="[
@@ -44,31 +43,25 @@
             </div>
             <br />
 
-            <article v-html="converter.makeHtml(article)" class="mt-2" id="article"></article>
+            <div class="row mt-2">
+                <ContentDoc tag="article" class="col-sm-12 col-lg-9" />
+                <Toc :links="selected.body.toc.links" class="col-sm-12 col-lg-3 d-none d-lg-inline" />
+            </div>
 
         </div>
 
         <Footer />
+
     </main>
 </template>
 
 <script setup>
-import showdown from "showdown";
 import moment from "moment";
 
-const converter = new showdown.Converter();
-
 const config = useRuntimeConfig();
-const router = useRouter();
-const route = useRoute();
+const {path} = useRoute();
 
-let {data: settings} = await useAsyncData("settings", () => $fetch(`${config.env.api}/config.json`));
-let obj = (typeof(settings.value) == "object") ? settings.value : JSON.parse(settings.value);
-if(!obj && config.env.backup_config) obj = JSON.parse((await (await fetch(`https://api.allorigins.win/get?url=${config.env.backup_config}`)).json()).contents);
+const {data} = await useAsyncData(`content-${path}`, () => queryContent().where({_path: path}).findOne());
 
-const selected = obj.blog.find(post => post.slug == route.params.slug);
-if(!selected) router.push({path: "/blog"});
-
-const {data: article} = await useAsyncData("article", () => $fetch(`${config.env.api}/${selected.content}`));
-
+const selected = data.value;
 </script>
