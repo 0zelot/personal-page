@@ -64,4 +64,5 @@ const {path} = useRoute();
 const {data} = await useAsyncData(`content-${path}`, () => queryContent().where({_path: path}).findOne());
 
 const selected = data.value;
+if(!selected) useRouter().push({path: "/blog"});
 </script>
