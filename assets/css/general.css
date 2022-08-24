@@ -1,6 +1,8 @@
+/* General */
+
 :root {
-    --primary-color: #5c4dff;
-    --primary-opacity-color: #5c4dffa8;
+    --primary-color: #5672fc;
+    --primary-opacity-color: #5672fca8;
     --addition-color: #070051;
     --background-color: #03000d;
     --text-color: #ffffffde;
@@ -26,6 +28,11 @@ html, main {
     background: var(--background-color);
 }
 
+
+
+
+/* Utilities */
+
 a {
     color: var(--primary-color) !important;
     text-decoration: none !important;
@@ -38,6 +45,35 @@ a:hover {
 .text-colored {
     color: var(--primary-color);
 }
+
+h2.regular, span.regular {
+    text-shadow: 0.8px 0.8px 0.8px black;
+    text-align: center;
+    display: block;
+    font-size: calc(0.5rem + 1.7vh);
+    color: white;
+}
+
+span.badge.bg-custom {
+    background: var(--primary-color);
+}
+
+span.badge {
+    margin: 0px 3px;
+}
+
+hr {
+    border-top: 1px solid var(--primary-opacity-color) !important;
+}
+
+code {
+    color: var(--primary-color) !important;
+}
+
+
+
+
+/* Header */
 
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/background.webp");
@@ -60,14 +96,6 @@ div.center {
     transform: translate(-50%, -50%);
     max-width: 600px;
     width: 100%;
-}
-
-h2.regular, span.regular {
-    text-shadow: 0.8px 0.8px 0.8px black;
-    text-align: center;
-    display: block;
-    font-size: calc(0.5rem + 1.7vh);
-    color: white;
 }
 
 h1.title {
@@ -98,32 +126,10 @@ div.favourite {
     font-size: calc(0.3rem + 3vh);
 }
 
-footer {
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
 
-footer:hover span.align {
-    display: none;
-}
 
-footer:hover span.add-label {
-    display: inline-block;
-}
 
-footer span.add-label {
-    display: none;
-}
-
-div.carousel, div.carousel-caption, div.carousel-indicators, div.carousel-item {
-    position: relative !important;
-    float: none !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    padding: 0 !important;
-}
+/* Github section */
 
 div.repo-item {
     border: 1px solid var(--primary-opacity-color);
@@ -142,13 +148,28 @@ div.repo-tags {
     margin-bottom: -15px;
 }
 
-span.badge.bg-custom {
-    background: var(--primary-color);
+#summary .collapse:not(.show) {
+    height: 11.5rem !important;
+    overflow: hidden;
+    display: block;
+}
+  
+#summary .collapsing {
+    min-height: 11.5rem !important;
+}
+  
+#summary a.collapsed:after  {
+    content: "Show more";
+}
+  
+#summary a.show-more:not(.collapsed):after {
+    content: "Show less";
 }
 
-span.badge {
-    margin: 0px 3px;
-}
+
+
+
+/* Discord section */
 
 span.discord-username {
     font-size: calc(0.5rem + 2.8vh);
@@ -165,27 +186,25 @@ div.discord-info {
     width: calc(100% - 135px);
 }
 
-hr {
-    border-top: 1px solid var(--primary-opacity-color) !important;
+
+
+
+/* Fix bootstrap carousel */
+
+div.carousel, div.carousel-caption, div.carousel-indicators, div.carousel-item {
+    position: relative !important;
+    float: none !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding: 0 !important;
 }
 
-#summary .collapse:not(.show) {
-      height: 11.5rem !important;
-      overflow: hidden;
-      display: block;
-}
-  
-#summary .collapsing {
-    min-height: 11.5rem !important;
-}
-  
-#summary a.collapsed:after  {
-    content: "Show more";
-}
-  
-#summary a.show-more:not(.collapsed):after {
-    content: "Show less";
-}
+
+
+
+/* Articles section */
 
 img.article-image {
     max-width: 720px !important;
@@ -215,6 +234,41 @@ div.article-content {
     min-height: 81vh;
 }
 
-code {
-    color: var(--primary-color) !important;
+li.toc-item {
+    list-style-type: none;
+}
+
+article > * {
+    color: #ffffffc8;
+}
+
+article > h1 > a, article > h1 > a:hover,
+article > h2 > a, article > h2 > a:hover,
+article > h3 > a, article > h3 > a:hover,
+article > h4 > a, article > h4 > a:hover,
+article > h5 > a, article > h5 > a:hover,
+article > h6 > a, article > h6 > a:hover {
+    color: white !important;
+    pointer-events: none;
+    display: block;
+}
+
+h1, h2 {
+    margin-top: 30px;
+}
+
+
+/* Footer */
+
+footer {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+footer:hover span.add-label {
+    display: block;
+}
+
+footer span.add-label {
+    display: none;
 }
