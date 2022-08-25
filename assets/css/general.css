@@ -187,7 +187,6 @@ span.discord-username {
 img.avatar {
     width: 110px;
     height: 110px;
-    border-radius: 50%;
 }
 
 div.discord-info {
@@ -274,17 +273,17 @@ article > *, div.article-content > * {
 
 article > h1, div.article-content > h1 {
     font-size: 55px;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 article > h2, div.article-content > h2 {
     font-size: 45px;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 article > h3, div.article-content > h3 {
     font-size: 30px;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 article > h4, div.article-content > h4,
