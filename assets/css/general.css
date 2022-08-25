@@ -220,7 +220,7 @@ img.article-image {
 }
 
 div.article-item {
-    min-height: 385px !important;
+    min-height: 395px !important;
     border: 1px solid var(--primary-opacity-color);
 }
 
