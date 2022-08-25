@@ -157,13 +157,13 @@ div.repo-tags {
 }
 
 #summary .collapse:not(.show) {
-    height: 12rem !important;
+    height: calc(3rem + 15.4vh) !important;
     overflow: hidden;
     display: block;
 }
   
 #summary .collapsing {
-    min-height: 12rem !important;
+    min-height: calc(3rem + 15.4vh) !important;
 }
   
 #summary a.collapsed:after  {
