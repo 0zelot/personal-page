@@ -42,6 +42,14 @@ a:hover {
     color: var(--primary-opacity-color) !important;
 }
 
+p, section > span, div > span {
+    font-size: 18px;
+}
+
+h3.card-title {
+    font-size: 28px;
+}
+
 .text-colored {
     color: var(--primary-color);
 }
@@ -149,13 +157,13 @@ div.repo-tags {
 }
 
 #summary .collapse:not(.show) {
-    height: 11.5rem !important;
+    height: 12rem !important;
     overflow: hidden;
     display: block;
 }
   
 #summary .collapsing {
-    min-height: 11.5rem !important;
+    min-height: 12rem !important;
 }
   
 #summary a.collapsed:after  {
@@ -212,7 +220,7 @@ img.article-image {
 }
 
 div.article-item {
-    min-height: 23rem !important;
+    min-height: 385px !important;
     border: 1px solid var(--primary-opacity-color);
 }
 
@@ -254,23 +262,46 @@ article > h6 > a, article > h6 > a:hover {
     display: block;
 }
 
-article > h1, article > h2 {
-    margin-top: 30px;
-}
-
 article > img, article > * > img {
     max-width: 100%;
     height: auto;
     border-radius: 3px;
 }
 
+article > *, div.article-content > * {
+    font-size: 20px;
+}
+
+article > h1, div.article-content > h1 {
+    font-size: 55px;
+    margin-top: 35px;
+}
+
+article > h2, div.article-content > h2 {
+    font-size: 45px;
+    margin-top: 35px;
+}
+
+article > h3, div.article-content > h3 {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+article > h4, div.article-content > h4,
+article > h5, div.article-content > h5,
+article > h6, div.article-content > h6 {
+    font-size: 25px;
+}
+
+.toc-title {
+    font-size: 28px;
+}
 
 
 
 /* Footer */
 
 footer {
-    font-size: 0.8rem;
     opacity: 0.8;
 }
 

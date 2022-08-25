@@ -1,6 +1,6 @@
 <template>
     <aside v-if="links.length > 2">
-        <h3 class="h5 font-bold">Table of contents</h3>
+        <h3 class="h5 font-bold toc-title">Table of contents</h3>
         <ul>
             <li v-for="(item, i) of links" :key="i" class="toc-item">
                 <a :href="`#${item.id}`">{{item.text}}</a>
