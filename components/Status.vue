@@ -3,7 +3,7 @@
     <span class="d-flex float-start">Discord status</span>
     <div v-if="discord" class="mt-5">
         <div class="row text-left">
-            <img :src="$props.favicon" width="auto" height="auto" class="avatar img-circle m-2 p-1 inline-block" alt="Avatar">
+            <nuxt-img format="webp" loading="lazy" :src="$props.favicon" width="auto" height="auto" class="avatar img-circle m-2 p-1 inline-block" alt="Avatar" />
             <div class="inline-block discord-info">
                 <span class="discord-username">{{discord.user.username}}</span><span>#{{discord.user.discriminator}}</span>
                 <span v-if="fetched" class="d-block">

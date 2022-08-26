@@ -8,7 +8,7 @@
             <div v-for="(item, i) of sortedArticles" :key="i" class="col-sm-12 col-md-6 col-lg-4 m-2 d-block mx-auto mb-3 mt-3">
                 <div class="text-center article-item rounded">
                     <NuxtLink :to="item._path">
-                        <img :src="item.image" class="card-img-top article-image p-2" :alt="item.title" :title="item.title">
+                        <nuxt-img format="webp" loading="lazy" :src="item.image" class="card-img-top article-image p-2" :alt="item.title" :title="item.title" />
                     </NuxtLink>
                     <div class="card-body m-2">
                         <div class="article-tags">
