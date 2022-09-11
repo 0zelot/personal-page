@@ -77,6 +77,13 @@ hr {
 
 code {
     color: var(--primary-color) !important;
+    font-size: 1.025rem !important;
+}
+
+pre.hljs {
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 1.025rem;
 }
 
 

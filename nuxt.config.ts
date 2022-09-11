@@ -151,7 +151,8 @@ export default defineNuxtConfig({
     },
 
     css: [
-        "~/assets/css/general.css"
+        "~/assets/css/general.css",
+        "highlight.js/styles/github-dark.css"
     ],
 
     build: {

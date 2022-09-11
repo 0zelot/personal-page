@@ -60,10 +60,14 @@
 
 <script setup>
 import moment from "moment";
+import hljs from "highlight.js";
+import {onMounted} from "vue";
 
 const config = useRuntimeConfig();
 const route = useRoute();
 
 const {data} = await useAsyncData("Content", async () => await queryContent().where({_path: route.fullPath}).findOne());
 const selected = data.value;
+
+onMounted(() => document.querySelectorAll("pre").forEach((block) => hljs.highlightBlock(block)));
 </script>
