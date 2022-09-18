@@ -7,9 +7,6 @@ export default defineEventHandler(async (event) => {
     posts.push(
         {
             _path: "/"
-        },
-        {
-            _path: "/blog"
         }
     );
 

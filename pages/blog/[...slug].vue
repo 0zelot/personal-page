@@ -24,12 +24,8 @@
 
             <Navbar :pages="[
                 {
-                    name: 'Home',
-                    url: '/'
-                },
-                {
                     name: 'Blog',
-                    url: '/blog/'
+                    url: '/'
                 },
                 {
                     name: selected?.title,
@@ -45,7 +41,7 @@
 
             <div class="row mt-2">
                 <div class="col-sm-12 col-lg-9">
-                    <nuxt-img format="webp" loading="lazy" alt="Cover image" class="rounded w-100" :title="selected?.title" :src="selected?.image" />
+                    <nuxt-img format="webp" loading="lazy" alt="Cover image" class="rounded w-100" :src="selected?.image" />
                     <ContentDoc :path="route.fullPath" tag="article" class="px-2" />
                 </div>
                 <Toc :links="selected?.body?.toc?.links" class="col-sm-12 col-lg-3 d-none d-lg-inline" />
