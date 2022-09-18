@@ -42,7 +42,7 @@
 		}
 	],
 	"github": {
-		"repos_url": "https://api.github.com/users/YOUR_GITHUB_USERNAME/repos"
+		"widget_url": "https://github-readme-stats.vercel.app/api/top-langs/?username=0zelot&layout=compact&bg_color=03000d&text_color=ffffffde&title_color=5672fc&hide_border=true&cache_seconds=7200"
 	},
 	"discord": {
 		"user": {
