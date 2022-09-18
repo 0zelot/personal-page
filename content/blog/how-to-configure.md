@@ -57,7 +57,7 @@ You can insert as many quotes as you want. It will be displayed as a slider.
 
 ### GitHub
 
-A general link to the GitHub API for getting the list of public repositories is `https://api.github.com/users/YOUR_GITHUB_USERNAME/repos`. Just put your GitHub username there.
+Link to your Github stats widget.
 
 ### Discord
 
