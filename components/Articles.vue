@@ -1,14 +1,14 @@
 <template>
-    <section class="mt-5">
+    <section class="px-3">
 
-        <h2 class="regular m-2">Maybe want to read something? - check out my <a href="/blog">blog</a>!</h2>
+        <a href="/rss.xml" target="_blank" title="RSS feed"><i class="fa-solid fa-rss float-end fs-5"></i></a>
 
-        <div class="row">
+        <h2 class="regular m-3">Maybe want to read something?</h2>
 
-            <div v-for="(item, i) of sortedArticles" :key="i" class="col-sm-12 col-md-6 col-lg-4 m-2 d-block mx-auto mb-3 mt-3">
-                <div class="text-center article-item rounded">
+            <div v-for="(item, i) of sortedArticles" :key="i" class="d-block mx-auto mb-5">
+                <div class="article-item rounded">
                     <a :href="item._path">
-                        <nuxt-img format="webp" loading="lazy" :src="item.image" class="card-img-top article-image p-2" :alt="item.title" :title="item.title" />
+                        <nuxt-img format="webp" loading="lazy" :src="item.image" class="card-img-top p-2" :alt="item.title" />
                     </a>
                     <div class="card-body m-2">
                         <div class="article-tags">
@@ -17,13 +17,12 @@
                         </div>
                         <br />
                         <h3 class="card-title h4"><a :href="item._path">{{item.title}}</a></h3>
-                        <p class="card-text mx-1 my-0 article-desc">{{item.description}}</p>
+                        <p class="card-text mt-1 my-0 article-desc">{{item.description}}</p>
                     </div>
                 </div>
+                <hr class="mt-5">
             </div>
         
-        </div>
-
     </section>
 </template>
 
