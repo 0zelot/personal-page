@@ -1,5 +1,5 @@
 <template>
-    <section class="px-3">
+    <section class="px-1">
 
         <a href="/rss.xml" target="_blank" title="RSS feed"><i class="fa-solid fa-rss float-end fs-5"></i></a>
 
@@ -8,7 +8,7 @@
             <div v-for="(item, i) of sortedArticles" :key="i" class="d-block mx-auto mb-5">
                 <div class="article-item rounded">
                     <a :href="item._path">
-                        <nuxt-img format="webp" loading="lazy" :src="item.image" class="card-img-top p-2" :alt="item.title" />
+                        <nuxt-img format="webp" loading="lazy" :src="item.image" class="card-img-top rounded py-2" :alt="item.title" />
                     </a>
                     <div class="card-body m-2">
                         <div class="article-tags">

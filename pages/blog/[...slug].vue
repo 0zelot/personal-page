@@ -20,7 +20,7 @@
         <Link rel="canonical" :href="`https://${config.env.domain}${route.fullPath}`" />
 
         <div class="container my-5 article-content">
-            <h1 class="text-center my-5"> {{selected?.title}}</h1>
+            <h1 class="text-center my-5 article-title-page"> {{selected?.title}}</h1>
 
             <Navbar :pages="[
                 {

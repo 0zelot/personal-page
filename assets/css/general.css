@@ -42,12 +42,16 @@ a:hover {
     color: var(--primary-opacity-color) !important;
 }
 
-p, section > span, div > span {
-    font-size: 18px;
+p {
+    font-size: 1.025rem;
+}
+
+section > span, div > span {
+    font-size: 1.1rem;
 }
 
 h3.card-title {
-    font-size: 36px;
+    font-size: 2.2rem;
 }
 
 .text-colored {
@@ -58,13 +62,13 @@ h2.regular, span.regular {
     text-shadow: 0.8px 0.8px 0.8px black;
     text-align: center;
     display: block;
-    font-size: calc(0.5rem + 1.7vh);
+    font-size: 1.4rem;
     color: white;
 }
 
 span.badge.bg-custom {
     background: var(--primary-color);
-    font-size: calc(0.2rem + 1vh);
+    font-size: 0.8rem;
 }
 
 span.badge {
@@ -77,13 +81,12 @@ hr {
 
 code {
     color: var(--primary-color) !important;
-    font-size: 1.025rem !important;
 }
 
 pre.hljs {
     padding: 8px;
     border-radius: 10px;
-    font-size: 1.025rem;
+    font-size: 1rem;
 }
 
 
@@ -192,7 +195,13 @@ div.article-tags {
 }
 
 p.article-desc {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+    p.article-desc, h3.card-title {
+        text-align: center;
+    }
 }
 
 div.article-content {
@@ -206,6 +215,11 @@ li.toc-item {
 article > * {
     color: #ffffffc8;
     text-align: justify;
+}
+
+h1.article-title-page {
+    font-size: 3.2rem !important;
+    color: white;
 }
 
 article > h1 > a, article > h1 > a:hover,
@@ -230,13 +244,13 @@ article > *, div.article-content > * {
 }
 
 article > h1, div.article-content > h1 {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     margin-top: 40px;
     text-align: left;
 }
 
 article > h2, div.article-content > h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-top: 40px;
     text-align: left;
 }
@@ -255,7 +269,7 @@ article > h6, div.article-content > h6 {
 }
 
 .toc-title {
-    font-size: 28px;
+    font-size: 1.6rem;
 }
 
 

@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div v-if="settings.favourites && settings.favourites.length > 0" class="icons favourite row text-center mt-4">
+            <div v-if="settings.favourites && settings.favourites.length > 0" class="icons favourite row text-center mt-4 px-2">
                 <h2 class="m-3 regular">What do I use</h2>
                 <div v-for="(item, i) of settings.favourites" :key="i" class="col">
                     <i :class="`${item} colored`"></i>
