@@ -3,7 +3,10 @@ import {SitemapStream, streamToPromise} from "sitemap";
 
 export default defineEventHandler(async (event) => {
 
-    const posts = await serverQueryContent(event).where({visibility: 1}).only("_path").find();
+    const visible = await serverQueryContent(event).where({visibility: 1}).only("_path").find();
+    const limited = await serverQueryContent(event).where({visibility: 2}).only("_path").find();
+    const posts = visible.concat(limited);
+
     posts.push(
         {
             _path: "/"

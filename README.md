@@ -48,10 +48,6 @@ Find the icon on [DEVICON](https://devicon.dev/) and paste its class in the arra
 
 You can insert as many quotes as you want. It will be displayed as a slider.
 
-### GitHub
-
-Link to your Github stats widget.
-
 ### Discord
 
 Enter your username and discriminator there. Then create a new server and turn on the Widget on it.
@@ -92,7 +88,5 @@ Create such a file, run the development mode `npm run dev`, and go to `localhost
 ### Visibility
 
 * **1** - the article is visible on the main page and the blog page
-* **2** - the article is available only via link
-
-### Display
-* **true** - show article on main page (available in sitemap and rss)
+* **2** - the article is hidden on the main page, available only via link and it is visible in sitemap and rss
+* **3** - the article is hidden on main page, not visible in sitemap and rss, available only via link

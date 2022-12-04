@@ -5,7 +5,6 @@ tags:
 - "Everything"
 keywords: "some,useless,keywords"
 visibility: 1
-display: true
 image: "https://i.imgur.com/8iTkIC7.png"
 description: "Vitae proin sagittis nisl rhoncus. Nisl tincidunt eget nullam non nisi est sit amet facilisis. Excepteur sint occaecat cupidatat non proident."
 ---

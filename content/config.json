@@ -49,6 +49,7 @@
 			"username": "YOUR_DISCORD_USERNAME",
 			"discriminator": "0000"
 		},
+		"info_url": "https://open-api.klonba.xyz/api/discord/user?id=YOUR_DISCORD_USER_ID",
 		"widget_url": "https://discord.com/api/guilds/YOUR_DISCORD_GUILD_ID/widget.json"
 	}
 }

@@ -45,7 +45,9 @@ const parse = (json) => {
 
 export default defineEventHandler(async (event) => {
 
-    const posts = await serverQueryContent(event).where({visibility: 1}).find();
+    const visible = await serverQueryContent(event).where({visibility: 1}).find();
+    const limited = await serverQueryContent(event).where({visibility: 2}).find();
+    const posts = visible.concat(limited);
 
     const feed = new Feed({
         id: "rss",
