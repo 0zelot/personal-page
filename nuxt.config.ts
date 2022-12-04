@@ -139,6 +139,12 @@ export default defineNuxtConfig({
                 { 
                     rel: "apple-touch-icon", 
                     href: process.env.favicon 
+                },
+                {
+                    rel: "alternate",
+                    type: "application/rss+xml",
+                    title: process.env.title,
+                    href: `https://${process.env.domain}/rss.xml`
                 }
             ],
             noscript: [

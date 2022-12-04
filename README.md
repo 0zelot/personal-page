@@ -93,3 +93,6 @@ Create such a file, run the development mode `npm run dev`, and go to `localhost
 
 * **1** - the article is visible on the main page and the blog page
 * **2** - the article is available only via link
+
+### Display
+* **true** - show article on main page (available in sitemap and rss)

@@ -4,6 +4,7 @@ created: 1659951006
 tags: []
 keywords: ""
 visibility: 1
+display: true
 image: "https://i.imgur.com/8iTkIC7.png"
 description: "Click here to see how to configure."
 ---
@@ -86,6 +87,7 @@ tags:
 - "Learning"
 keywords: ""
 visibility: 1
+display: true
 image: "https://i.imgur.com/824s386.png"
 description: "Vitae proin sagittis nisl rhoncus. Nisl tincidunt eget nullam non nisi est sit amet facilisis. Excepteur sint occaecat cupidatat non proident."
 ---
@@ -99,4 +101,7 @@ Create such a file, run the development mode `npm run dev`, and go to `localhost
 ### Visibility
 
 * **1** - the article is visible on the main page and the blog page
-* **2** - the article is available only via link
+* **2** - the article is available only via link (also not available in sitemap and rss)
+
+### Display
+* **true** - show article on main page (available in sitemap and rss)

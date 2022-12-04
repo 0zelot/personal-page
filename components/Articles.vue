@@ -38,7 +38,7 @@ export default {
         }
     },
     created() {
-        this.sortedArticles = this?.$props.articles.sort((a, b) => b.created - a.created)
+        this.sortedArticles = this?.$props.articles.filter(a => a.display).sort((a, b) => b.created - a.created)
     }
 }
 </script>
